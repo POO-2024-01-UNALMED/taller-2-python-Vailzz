@@ -60,9 +60,19 @@ class Motor:
 
     
     def asignarTipo(self, tipo):
-        if tipo == "electrico" or "gasolina":
+        if (tipo == "electrico" or tipo == "gasolina"):
             self.tipo = tipo
 
 
 
 ################################################################################################################################################################
+
+if __name__ == "__main__":
+
+    asiento1 = Asiento("amarillo", 2000, 1, )
+    motor1 = Motor(4, "gasolina", 1)
+    auto1 = Auto("sendero", 40000, [Asiento], "chevro", Motor, 1)
+
+    print(auto1.verificarIntegridad())
+
+
