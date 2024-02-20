@@ -14,16 +14,22 @@ class Auto:
 
         counter = 0
 
-        for i in range(len(self.asientos)):
-            
-             counter += 1
+        for i in self.asientos:
+            if(type(i) == Asiento):
+                counter += 1
         return counter
         
         
     
     def verificarIntegridad(self):
-        return self.registro
-
+        if self.registro == self.motor.registro:
+            for asiento in self.asientos:
+                if type(asiento) == self.registro:
+                    if asiento.registro != self.registro:
+                        return "Piezas no son originales"
+                    return "auto original"
+            
+            return "Auto original"
 
 ################################################################################################################################################################
 
@@ -61,12 +67,5 @@ class Motor:
 
 ################################################################################################################################################################
 
-if __name__ == "__main__":
-
-    asiento1 = Asiento("amarillo", 2000, 1, )
-    motor1 = Motor(4, "gasolina", 1)
-    auto1 = Auto("sendero", 40000, [Asiento], "chevro", Motor, 1)
-
-    print(auto1.cantidadAsientos())
 
 
